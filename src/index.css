@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Theme utilities based on provided palette */
+  .btn-primary {
+    @apply bg-accentGold text-primaryText font-bold rounded-xl shadow-bronze hover:bg-darkBronze hover:text-primaryBg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-accentGold text-accentGold rounded-xl hover:bg-accentGold hover:text-primaryText transition-colors duration-200;
+  }
+
+  .navbar-bg {
+    @apply bg-primaryText text-primaryBg shadow-md;
+  }
+
+  .navbar-link {
+    @apply relative px-4 py-2 text-primaryBg/90 hover:text-primaryBg transition-colors;
+  }
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.25rem;
+    height: 2px;
+    background-color: theme('colors.accentGold');
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease;
+  }
+  .navbar-link:hover::after,
+  .navbar-link[aria-current='page']::after {
+    transform: scaleX(1);
+  }
+
+  .card-surface {
+    @apply bg-primaryBg text-secondaryText shadow-beige border border-borderLine;
+  }
+
+  .section-bg {
+    @apply bg-primaryBg;
+  }
+
+  .section-muted {
+    @apply bg-softBeige;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.5s ease-out;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.4s ease-out;
+  }
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

@@ -68,6 +68,9 @@ function App() {
         user={user}
       />
       {renderPage()}
+      <footer className="text-center text-sm text-secondaryText py-6">
+        Created by _SR Developer.
+      </footer>
       <LoginModal
         isOpen={isLoginModalOpen}
         onClose={() => setIsLoginModalOpen(false)}

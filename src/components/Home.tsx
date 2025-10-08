@@ -33,7 +33,7 @@ export default function Home({ onNavigate, user }: HomeProps) {
       <div
         className="relative h-[600px] bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage: 'url(/banner.png)',
+          backgroundImage: 'url(/logo1.jpg)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-primaryText/70 via-primaryText/30 to-transparent"></div>

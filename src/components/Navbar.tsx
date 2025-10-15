@@ -30,7 +30,7 @@ export default function Navbar({ onNavigate }: NavbarProps) {
               onClick={() => onNavigate('products')}
               className="px-4 py-2 rounded-lg text-black hover:text-amber-600 transition-colors duration-300"
             >
-              Catalog
+              Catalogue
             </button>
           </div>
         </div>

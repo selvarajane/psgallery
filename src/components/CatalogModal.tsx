@@ -31,7 +31,7 @@ export default function CatalogModal({ isOpen, onClose }: CatalogModalProps) {
               <ExternalLink className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-primaryText">Frame Catalog</h2>
+              <h2 className="text-2xl font-bold text-primaryText">Frame Catlogue</h2>
               <p className="text-secondaryText">Complete collection of our photo frames</p>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function CatalogModal({ isOpen, onClose }: CatalogModalProps) {
             <iframe
               src="/catalog.pdf"
               className="w-full h-[500px] rounded-lg"
-              title="PS Gallery Frame Catalog"
+              title="PS Gallery Frame Catlogue"
             />
           </div>
 
@@ -60,7 +60,7 @@ export default function CatalogModal({ isOpen, onClose }: CatalogModalProps) {
               className="flex items-center justify-center space-x-2 px-6 py-3 bg-accentGold text-primaryText rounded-full font-semibold hover:bg-accentGold/90 transition-colors"
             >
               <Download className="h-5 w-5" />
-              <span>Download Catalog</span>
+              <span>Download Catlogue</span>
             </button>
             <button
               onClick={handleViewInNewTab}

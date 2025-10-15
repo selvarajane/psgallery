@@ -14,6 +14,7 @@ export default function Navbar({ currentPage, onNavigate, onLoginClick, user }: 
   const navItems = [
     { name: 'Home', value: 'home' },
     { name: 'Products', value: 'products' },
+    { name: 'Catalogue', value: 'products' },
     { name: 'About', value: 'about' },
     { name: 'Contact', value: 'contact' }
   ];

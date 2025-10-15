@@ -2,13 +2,13 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 py-12">
+    <div className="min-h-screen bg-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 mb-4">
+          <h1 className="text-5xl font-bold text-black mb-4 hover:text-amber-600 transition-colors duration-300">
             Contact Us
           </h1>
-          <p className="text-xl text-gray-600">Get in touch with PS Gallery</p>
+          <p className="text-xl text-black">Get in touch with PS Gallery</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -121,7 +121,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="w-full py-4 bg-black text-white font-bold rounded-xl shadow-lg hover:bg-amber-600 transition-colors duration-300"
               >
                 Send Message
               </button>

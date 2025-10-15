@@ -2,13 +2,13 @@ import { Heart, Award, Sparkles, Users } from 'lucide-react';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 py-12">
+    <div className="min-h-screen bg-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12 animate-fadeIn">
-          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 mb-4">
+          <h1 className="text-5xl font-bold text-black mb-4 hover:text-amber-600 transition-colors duration-300">
             About PS Gallery
           </h1>
-          <p className="text-xl text-gray-600">Your Trusted Partner in Preserving Memories</p>
+          <p className="text-xl text-black">Your Trusted Partner in Preserving Memories</p>
         </div>
 
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mb-12 animate-slideUp">

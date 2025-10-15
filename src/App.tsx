@@ -19,7 +19,10 @@ function App() {
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const element = document.getElementById(page);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleOrderClick = (product: Product) => {
@@ -44,21 +47,6 @@ function App() {
     };
   }, []);
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home onNavigate={handleNavigate} user={user} />;
-      case 'products':
-        return <Products onOrderClick={handleOrderClick} />;
-      case 'about':
-        return <About />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <Home onNavigate={handleNavigate} user={user} />;
-    }
-  };
-
   return (
     <div className="min-h-screen">
       <Navbar
@@ -67,7 +55,20 @@ function App() {
         onLoginClick={() => setIsLoginModalOpen(true)}
         user={user}
       />
-      {renderPage()}
+      <div className="snap-y snap-mandatory">
+        <div id="home" className="snap-start">
+          <Home onNavigate={handleNavigate} user={user} />
+        </div>
+        <div id="products" className="snap-start">
+          <Products onOrderClick={handleOrderClick} />
+        </div>
+        <div id="about" className="snap-start">
+          <About />
+        </div>
+        <div id="contact" className="snap-start">
+          <Contact />
+        </div>
+      </div>
       <footer className="text-center text-sm text-secondaryText py-6">
         Created by _SR Developer.
       </footer>

@@ -13,7 +13,7 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-300">
-            <div className="bg-gradient-to-br from-orange-500 to-pink-500 text-white rounded-2xl p-6 mb-6">
+                <div className="min-h-screen bg-white py-12">
               <MapPin className="h-12 w-12 mb-4" />
               <h2 className="text-2xl font-bold mb-2">Visit Our Shop</h2>
               <p className="text-lg">

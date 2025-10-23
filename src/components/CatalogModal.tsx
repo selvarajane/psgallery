@@ -22,30 +22,30 @@ export default function CatalogModal({ isOpen, onClose }: CatalogModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-primaryBg rounded-2xl shadow-bronze max-w-4xl w-full max-h-[90vh] overflow-hidden">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+      <div className="bg-white rounded-2xl shadow-lg max-w-4xl w-full max-h-[90vh] overflow-hidden animate-slideUp">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-borderLine">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div className="flex items-center space-x-3">
-            <div className="bg-accentGold text-primaryText rounded-full p-2">
+            <div className="bg-amber-500 text-white rounded-full p-2">
               <ExternalLink className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-primaryText">Frame Catalog</h2>
-              <p className="text-secondaryText">Complete collection of our photo frames</p>
+              <h2 className="text-2xl font-bold text-gray-800">Frame Catalog</h2>
+              <p className="text-gray-600">Complete collection of our photo frames</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-borderLine rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
-            <X className="h-6 w-6 text-primaryText" />
+            <X className="h-6 w-6 text-gray-600" />
           </button>
         </div>
 
         {/* PDF Viewer */}
         <div className="p-6">
-          <div className="bg-borderLine rounded-xl p-4 mb-4">
+          <div className="bg-gray-50 rounded-xl p-4 mb-4 shadow-inner">
             <iframe
               src="/catalog.pdf"
               className="w-full h-[500px] rounded-lg"
@@ -57,14 +57,14 @@ export default function CatalogModal({ isOpen, onClose }: CatalogModalProps) {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={handleDownload}
-              className="flex items-center justify-center space-x-2 px-6 py-3 bg-accentGold text-primaryText rounded-full font-semibold hover:bg-accentGold/90 transition-colors"
+              className="flex items-center justify-center space-x-2 px-6 py-3 bg-amber-500 text-white rounded-full font-semibold hover:bg-amber-600 transition-colors transform hover:scale-105 duration-200"
             >
               <Download className="h-5 w-5" />
-              <span>Download Catalog</span>
+              <span>Download Catalogue</span>
             </button>
             <button
               onClick={handleViewInNewTab}
-              className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-accentGold text-accentGold rounded-full font-semibold hover:bg-accentGold hover:text-primaryText transition-colors"
+              className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-amber-500 text-amber-500 rounded-full font-semibold hover:bg-amber-500 hover:text-white transition-colors transform hover:scale-105 duration-200"
             >
               <ExternalLink className="h-5 w-5" />
               <span>Open in New Tab</span>
@@ -73,11 +73,11 @@ export default function CatalogModal({ isOpen, onClose }: CatalogModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="bg-primaryText/5 p-4 text-center">
-          <p className="text-secondaryText text-sm">
+        <div className="bg-gray-50 p-4 text-center">
+          <p className="text-gray-600 text-sm">
             Need help choosing the right frame? Contact us at{' '}
-            <a href="tel:+919876543210" className="text-accentGold hover:underline">
-              +91-9876543210
+            <a href="tel:+919600295627" className="text-amber-500 hover:underline font-semibold">
+              +91-9600295627
             </a>
           </p>
         </div>

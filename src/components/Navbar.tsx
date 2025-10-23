@@ -62,7 +62,7 @@ export default function Navbar({ currentPage, onNavigate, onLoginClick, user }: 
             ) : (
               <button
                 onClick={onLoginClick}
-                className="ml-4 px-6 py-2 btn-primary"
+                className="ml-4 px-6 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors duration-300"
               >
                 Login
               </button>

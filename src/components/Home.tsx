@@ -74,7 +74,7 @@ export default function Home({ onNavigate, user }: HomeProps) {
           >
             <div className="flex flex-col items-center space-y-1">
               <FileText className="h-6 w-6 animate-bounce" />
-              <span className="text-sm font-black">CATALOG</span>
+              <span className="text-sm font-black">CATALOGUE</span>
             </div>
             
             {/* Glowing effect */}

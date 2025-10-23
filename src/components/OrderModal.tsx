@@ -13,7 +13,7 @@ export default function OrderModal({ isOpen, onClose, product }: OrderModalProps
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<string>('1');
   // removed image upload feature per request
 
   if (!isOpen || !product) return null;
@@ -21,12 +21,13 @@ export default function OrderModal({ isOpen, onClose, product }: OrderModalProps
   // no file handling
 
   const handleWhatsAppOrder = async () => {
+    const parsedQuantity = parseInt(quantity) || 0;
     const message = `Hi PS Gallery! I want to order:
 
 *Product:* ${product.name}
 *Price:* ₹${product.price}
-*Quantity:* ${quantity}
-*Total:* ₹${product.price * quantity}
+*Quantity:* ${parsedQuantity}
+*Total:* ₹${product.price * parsedQuantity}
 
 *Customer Details:*
 Name: ${name}
@@ -48,7 +49,7 @@ Please confirm my order. Thank you!`;
     setName('');
     setPhone('');
     setAddress('');
-    setQuantity(1);
+    setQuantity('1');
     onClose();
   };
   
@@ -101,16 +102,7 @@ Please confirm my order. Thank you!`;
                       type="number"
                       min="1"
                       value={quantity}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        if (value === '') {
-                          setQuantity(1);
-                          e.target.value = '';
-                        } else {
-                          const parsedValue = parseInt(value);
-                          setQuantity(Math.max(1, parsedValue || 1));
-                        }
-                      }}
+                      onChange={(e) => setQuantity(e.target.value)}
                       onFocus={(e) => e.target.value = ''}
                       className="w-20 px-3 py-2 rounded-lg border-2 border-gray-200 focus:border-pink-500 focus:outline-none"
                     />
@@ -120,7 +112,7 @@ Please confirm my order. Thank you!`;
                   <div className="flex justify-between items-center">
                     <span className="text-lg font-semibold text-gray-700">Total:</span>
                     <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600">
-                      ₹{product.price * quantity}
+                      ₹{product.price * (parseInt(quantity) || 0)}
                     </span>
                   </div>
                 </div>

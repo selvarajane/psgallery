@@ -101,7 +101,17 @@ Please confirm my order. Thank you!`;
                       type="number"
                       min="1"
                       value={quantity}
-                      onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        if (value === '') {
+                          setQuantity(1);
+                          e.target.value = '';
+                        } else {
+                          const parsedValue = parseInt(value);
+                          setQuantity(Math.max(1, parsedValue || 1));
+                        }
+                      }}
+                      onFocus={(e) => e.target.value = ''}
                       className="w-20 px-3 py-2 rounded-lg border-2 border-gray-200 focus:border-pink-500 focus:outline-none"
                     />
                   </div>

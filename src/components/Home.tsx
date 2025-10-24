@@ -5,10 +5,9 @@ import CatalogModal from './CatalogModal';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
-  user?: any;
 }
 
-export default function Home({ onNavigate, user }: HomeProps) {
+export default function Home({ onNavigate }: HomeProps) {
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
 

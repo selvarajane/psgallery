@@ -4,18 +4,13 @@ import Home from './components/Home';
 import Products from './components/Products';
 import About from './components/About';
 import Contact from './components/Contact';
-import LoginModal from './components/LoginModal';
 import OrderModal from './components/OrderModal';
 import { Product } from './data/mockData';
-import { useEffect } from 'react';
-import { supabase } from './lib/supabaseClient';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [user, setUser] = useState<any>(null);
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
@@ -27,27 +22,11 @@ function App() {
     setIsOrderModalOpen(true);
   };
 
-  useEffect(() => {
-    const init = async () => {
-      if (!supabase) return;
-      const { data } = await supabase.auth.getUser();
-      setUser(data.user ?? null);
-    };
-    init();
-    if (!supabase) return;
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-      if (session?.user) setIsLoginModalOpen(false);
-    });
-    return () => {
-      sub?.subscription.unsubscribe();
-    };
-  }, []);
 
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home onNavigate={handleNavigate} user={user} />;
+        return <Home onNavigate={handleNavigate} />;
       case 'products':
         return <Products onOrderClick={handleOrderClick} />;
       case 'about':
@@ -55,7 +34,7 @@ function App() {
       case 'contact':
         return <Contact />;
       default:
-        return <Home onNavigate={handleNavigate} user={user} />;
+        return <Home onNavigate={handleNavigate} />;
     }
   };
 
@@ -64,17 +43,11 @@ function App() {
       <Navbar
         currentPage={currentPage}
         onNavigate={handleNavigate}
-        onLoginClick={() => setIsLoginModalOpen(true)}
-        user={user}
       />
       {renderPage()}
       <footer className="text-center text-sm text-secondaryText py-6">
         Created by _SR Developer.
       </footer>
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onClose={() => setIsLoginModalOpen(false)}
-      />
       <OrderModal
         isOpen={isOrderModalOpen}
         onClose={() => setIsOrderModalOpen(false)}

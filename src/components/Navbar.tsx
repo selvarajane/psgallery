@@ -4,11 +4,9 @@ import { Menu, X } from 'lucide-react';
 interface NavbarProps {
   currentPage: string;
   onNavigate: (page: string) => void;
-  onLoginClick: () => void;
-  user?: any;
 }
 
-export default function Navbar({ currentPage, onNavigate, onLoginClick, user }: NavbarProps) {
+export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -49,24 +47,6 @@ export default function Navbar({ currentPage, onNavigate, onLoginClick, user }: 
                 {item.name}
               </button>
             ))}
-            {user ? (
-              <img
-                src={user.user_metadata?.avatar_url || user.user_metadata?.picture || '/logo1.jpg'}
-                alt="Profile"
-                className="ml-4 h-10 w-10 rounded-full object-cover border-2 border-primaryBg"
-                onError={(e) => {
-                  const img = e.currentTarget as HTMLImageElement;
-                  img.src = '/logo.svg';
-                }}
-              />
-            ) : (
-              <button
-                onClick={onLoginClick}
-                className="ml-4 px-6 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors duration-300"
-              >
-                Login
-              </button>
-            )}
           </div>
 
           <button
@@ -93,32 +73,6 @@ export default function Navbar({ currentPage, onNavigate, onLoginClick, user }: 
                 {item.name}
               </button>
             ))}
-            {user ? (
-              <div className="flex items-center px-4 py-2">
-                <img
-                  src={user.user_metadata?.avatar_url || user.user_metadata?.picture || '/logo1.jpg'}
-                  alt="Profile"
-                  className="h-10 w-10 rounded-full object-cover border-2 border-primaryBg mr-3"
-                  onError={(e) => {
-                    const img = e.currentTarget as HTMLImageElement;
-                    img.src = '/logo.svg';
-                  }}
-                />
-                <span className="font-semibold text-primaryText truncate">
-                  {user.user_metadata?.name || user.email}
-                </span>
-              </div>
-            ) : (
-              <button
-                onClick={() => {
-                  onLoginClick();
-                  setMobileMenuOpen(false);
-                }}
-                className="block w-full text-left px-4 py-2 btn-primary font-semibold rounded-lg"
-              >
-                Login
-              </button>
-            )}
           </div>
         </div>
       )}

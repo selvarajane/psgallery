@@ -37,8 +37,8 @@ export const products: Product[] = [
   { id: '15', name: '20x30 inches', price: 2099, image: '20x30.jpg', description: 'Impressive wall centerpiece', category: 'xlarge', courierCharge: 280, material: 'Wooden Frame', dimensions: '20" x 30"', weight: '1400g' },
   { id: '16', name: '24x30 inches', price: 2299, image: '24x30.jpg', description: 'Extra large premium frame', category: 'xlarge', courierCharge: 300, material: 'Wooden Frame', dimensions: '24" x 30"', weight: '1600g' },
   { id: '17', name: '24x36 inches', price: 2499, image: '24x36.jpg', description: 'Movie poster size frame', category: 'xlarge', courierCharge: 350, material: 'Wooden Frame', dimensions: '24" x 36"', weight: '1800g' },
-  { id: '18', name: 'A4 Size', price: 300, image: 'A4.jpg', description: 'Standard document frame (8.3x11.7")', category: 'standard', courierCharge: 60, material: 'Wooden Frame', dimensions: '8.3" x 11.7"', weight: '300g' },
-  { id: '19', name: 'A3 Size', price: 600, image: 'A3.jpg', description: 'Large document frame (11.7x16.5")', category: 'standard', courierCharge: 120, material: 'Wooden Frame', dimensions: '11.7" x 16.5"', weight: '600g' },
+  { id: '18', name: 'A4 Size', price: 300, image: 'a3.jpg', description: 'Standard document frame (8.3x11.7")', category: 'standard', courierCharge: 60, material: 'Wooden Frame', dimensions: '8.3" x 11.7"', weight: '300g' },
+  { id: '19', name: 'A3 Size', price: 600, image: 'a3.jpg', description: 'Large document frame (11.7x16.5")', category: 'standard', courierCharge: 120, material: 'Wooden Frame', dimensions: '11.7" x 16.5"', weight: '600g' },
   { id: '20', name: 'Square 6x6 inches', price: 280, image: '6x6.jpg', description: 'Perfect square format', category: 'square', courierCharge: 60, material: 'Wooden Frame', dimensions: '6" x 6"', weight: '280g' },
   { id: '21', name: 'Square 8x8 inches', price: 380, image: '8x8.jpg', description: 'Instagram-style square frame', category: 'square', courierCharge: 80, material: 'Wooden Frame', dimensions: '8" x 8"', weight: '380g' },
   { id: '22', name: 'Square 10x10 inches', price: 520, image: '10x10.jpg', description: 'Medium square display', category: 'square', courierCharge: 100, material: 'Wooden Frame', dimensions: '10" x 10"', weight: '520g' },
@@ -46,10 +46,10 @@ export const products: Product[] = [
   { id: '24', name: 'Collage 4-Photo', price: 499, image: 'collage4.jpg', description: '4 openings for multiple photos', category: 'collage', courierCharge: 150, material: 'Wooden Frame', dimensions: '12" x 16"', weight: '800g' },
   { id: '25', name: 'Collage 6-Photo', price: 599, image: 'collage6.jpg', description: '6 openings for family collage', category: 'collage', courierCharge: 180, material: 'Wooden Frame', dimensions: '16" x 20"', weight: '950g' },
   { id: '26', name: 'Collage 8-Photo', price: 799, image: 'collage8.jpg', description: '8 openings for memory wall', category: 'collage', courierCharge: 220, material: 'Wooden Frame', dimensions: '20" x 24"', weight: '1100g' },
-  { id: '27', name: 'Panoramic 12x36', price: 1300 , image: ' ', description: 'Ultra-wide panoramic frame', category: 'panoramic', courierCharge: 250, material: 'Wooden Frame', dimensions: '12" x 36"', weight: '1300g' },
-  { id: '28', name: 'Certificate Frame', price: 450, image: ' ', description: 'Professional certificate display', category: 'certificate', courierCharge: 90, material: 'Wooden Frame', dimensions: '8" x 10"', weight: '450g' },
-  { id: '29', name: 'Custom Size Small', price: 500, image: ' custom.jpg', description: 'Custom frame up to 12 inches', category: 'custom', courierCharge: 100, material: 'Wooden Frame', dimensions: 'Custom', weight: '500g' },
-  { id: '30', name: 'Custom Size Large', price: 1500, image: ' custom2.jpg', description: 'Custom frame above 12 inches', category: 'custom', courierCharge: 300, material: 'Wooden Frame', dimensions: 'Custom', weight: '1500g' }
+  { id: '27', name: 'Panoramic 12x36', price: 1300, image: '12x36.jpg', description: 'Ultra-wide panoramic frame', category: 'panoramic', courierCharge: 250, material: 'Wooden Frame', dimensions: '12" x 36"', weight: '1300g' },
+  { id: '28', name: 'Certificate Frame', price: 450, image: '8x10.jpg', description: 'Professional certificate display', category: 'certificate', courierCharge: 90, material: 'Wooden Frame', dimensions: '8" x 10"', weight: '450g' },
+  { id: '29', name: 'Custom Size Small', price: 500, image: 'custom.jpg', description: 'Custom frame up to 12 inches', category: 'custom', courierCharge: 100, material: 'Wooden Frame', dimensions: 'Custom', weight: '500g' },
+  { id: '30', name: 'Custom Size Large', price: 1500, image: 'custom2.jpg', description: 'Custom frame above 12 inches', category: 'custom', courierCharge: 300, material: 'Wooden Frame', dimensions: 'Custom', weight: '1500g' }
 ];
 
 export const reviews: Review[] = [
